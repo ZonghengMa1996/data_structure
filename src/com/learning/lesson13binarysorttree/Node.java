@@ -99,4 +99,48 @@ public class Node {
             this.right.inOrder();
         }
     }
+
+
+    /**
+     * 找到待删除的目标结点
+     *
+     * @param val 目标结点的值
+     * @return
+     */
+    public Node findTarget(int val) {
+        if (this.val == val) {
+            return this;
+        }
+        if (val < this.val) {
+            // 目标值较小，向左子树递归
+            return this.left == null ? null : this.left.findTarget(val);
+        } else {
+            // 目标值较大，向右子树递归
+            return this.right == null ? null : this.right.findTarget(val);
+        }
+    }
+
+
+    /**
+     * 查找目标结点的父节点
+     *
+     * @param val 待删除结点的关键字
+     * @return 待删除结点的父节点
+     */
+    public Node findParent(int val) {
+        // 判断是否为左子结点或者右子节点
+        boolean leftChild = this.left != null && this.left.val == val;
+        boolean rightChild = this.right != null && this.right.val == val;
+        if (leftChild || rightChild) {
+            return this;
+        } else {
+            if (val < this.val) {
+                // 目标值较小，向左子树递归
+                return this.left == null ? null : this.left.findParent(val);
+            } else {
+                // 目标值较大，向右子树递归
+                return this.right == null ? null : this.right.findParent(val);
+            }
+        }
+    }
 }
