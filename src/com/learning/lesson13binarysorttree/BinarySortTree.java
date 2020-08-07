@@ -12,11 +12,26 @@ public class BinarySortTree {
 
     }
 
-
     /**
      * 根结点
      */
-    private Node root;
+    private final Node root;
 
 
+    public BinarySortTree(Node root) {
+        this.root = root;
+    }
+
+
+    /**
+     * 中序遍历
+     */
+    public void inOrder() {
+        if (root == null) {
+            System.out.println("树为空");
+        } else {
+            System.out.println("----------中序遍历----------");
+            root.inOrder();
+        }
+    }
 }
