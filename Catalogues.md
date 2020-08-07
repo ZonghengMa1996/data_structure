@@ -202,4 +202,4 @@
      （1）根据关键字找到待删除的结点target  
      （2）找到target的父节点parent  
      （3）确定target是parent的左/右节点  
-     （4）target有左/右子树 => 左/右子树挪至targert原来的位置
+     （4）target有左/右子树 => 左/右子树挪至target原来的位置
