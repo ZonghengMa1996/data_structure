@@ -17,3 +17,4 @@
 #### lesson11 赫夫曼树 Huffman Tree
 #### lesson12 哈夫曼编码 Huffman Coding
 #### lesson13 二叉排序树 Binary Sort Tree
+#### lesson14 平衡二叉树 Self-balance Binary Sort Tree

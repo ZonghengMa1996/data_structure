@@ -203,3 +203,29 @@
      （2）找到target的父节点parent  
      （3）确定target是parent的左/右节点  
      （4）target有左/右子树 => 左/右子树挪至target原来的位置
+***
+### lesson14 平衡二叉树 Self-balance Binary Sort Tree
+  1. BST的问题
+     - 当对一个有序序列构建BST时，所得树形式上与单链表相近
+     - 插入速度无影响
+     - 查询遍历时，（虽然左/右子树为空）仍需要取比较左/右子树，实际效率低于单链表
+  2. 基本介绍
+     - 平衡二叉树也叫平衡搜索二叉树（Self-balance Binary Sort Tree），又称AVL树
+     - 它是一棵空树或者它的左右两个子树的高度差不大于1
+     - 对于每个非叶子结点，以它为根的子树也是平衡二叉树
+     - 常用实现方法有红黑树、AVL、替罪羊树、Treap、伸展树
+  3. 实现方式
+     - 当右子树高度 - 左子树高度 > 1时，左旋转（Left Rotate）  
+     （1）创建一个新结点newNode，值为当前结点的值  
+     （2）新结点的左指针指向当前结点的左子树 `newNode.left = this.left`  
+     （3）新结点的右指针指向当前结点的右右子结点的左子结点 `newNode.right = this.left.right`  
+     （4）当前结点的值改为其右子结点的值 `this.val = this.right.val`  
+     （5）当前结点的右指针指向右子结点的右子结点 `this.right = this.right.right`  
+     （6）当前结点的左指针指向新结点 `this.left = newNode`
+     - 当左子树高度 - 右子树高度 > 1时，右旋转（Right Rotate）  
+     （1）创建一个新的结点newNode，值为当前结点的值  
+     （2）新结点的右指针指向当前结点的右子树 `newNode.right = this.right`  
+     （3）新结点的左指针指向当前结点的左子树的右子树 `newNode.left = this.left.right`  
+     （4）当前结点的值改为其左子结点的值 `this.val = this.left.val`  
+     （5）当前结点的左指针指向其左子树的左子树 `this.left = this.left.left`  
+     （6）当前结点的右指针指向新结点 `this.right = newNode`
