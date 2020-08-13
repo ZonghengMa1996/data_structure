@@ -9,9 +9,8 @@ package com.learning.lesson14avl;
 public class BalanceTree {
 
     public static void main(String[] args) {
-        // int[] array = {4, 3, 6, 5, 7, 8};
-        int[] array = {10, 12, 8, 9, 7, 6};
-        BalanceTree tree = new BalanceTree(null);
+        int[] array = {22, 14, 10, 11, 7, 6, 8, 9, 3, 29};
+        BalanceTree tree = new BalanceTree();
         for (int val : array) {
             tree.addNode(new BalanceTreeNode(val));
         }
@@ -25,10 +24,6 @@ public class BalanceTree {
      * 根结点
      */
     private BalanceTreeNode root;
-
-    public BalanceTree(BalanceTreeNode root) {
-        this.root = root;
-    }
 
     public BalanceTreeNode getRoot() {
         return root;

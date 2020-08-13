@@ -87,10 +87,20 @@ public class BalanceTreeNode {
 
         // 右子树高度 - 左子树高度 > 1，左旋转
         if (rightHeight() - leftHeight() > 1) {
+            if (this.right != null && this.right.leftHeight() > this.right.rightHeight()) {
+                // 右子树的左子树高度大于右子树的右子树高度，先对右子树RR
+                this.right.rightRotate();
+            }
             leftRotate();
+            /* 双旋转调整高度之后，左右子树高度变化，防止被右旋转的代码影响 */
+            return;
         }
         // 左子树高度 - 右子树高度 > 1，右旋转
         if (leftHeight() - rightHeight() > 1) {
+            if (this.left != null && this.left.rightHeight() > this.left.leftHeight()) {
+                // 左子树的右子树高度大于左子树的左子树高度，先对左子树LR
+                this.left.leftRotate();
+            }
             rightRotate();
         }
     }
