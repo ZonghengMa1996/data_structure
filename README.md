@@ -1,4 +1,4 @@
-## data_structure 数据结构学习-代码片段
+## data_structure 数据结构-代码片段
 
 ### 介绍
 本项目为在学习尚硅谷韩顺平老师的“图解Java 数据结构和算法”课程中，根据所学内容编写的在java中模拟或实现各类数据结构的代码片段
@@ -18,3 +18,4 @@
 #### lesson12 哈夫曼编码 Huffman Coding
 #### lesson13 二叉排序树 Binary Sort Tree
 #### lesson14 平衡二叉树 Self-balance Binary Sort Tree
+#### lesson15 多路查找树 Multi-way Search Tree
